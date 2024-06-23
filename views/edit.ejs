@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Edit Hisab</title>
+</head>
+
+<body>
+    <div>
+        <div class="flex justify-between item-center px-20 py-10 font-semibold">
+            <div><a href="/">KhaataBook</a></div>
+            <div class="flex justify-between item-center gap-20">
+                <div><a href="/">Home</a></div>
+                <div><a href="/createhisaab">Create New Hisab</a></div>
+            </div>
+        </div>
+
+        <div class="px-20">
+            <div class="pb-5 font-semibold">You're editing hissab of <span class="text-blue-500"><%= filename.split(".")[0]%></span> date</div>
+            <form action="/update/<%= filename%>" class="flex justify-center item-center flex-col gap-5 w-1/2" method="post">
+                <textarea class="border-2 border-blue-500 rounded-md p-2" rows="10" cols="30" name="updatedfiledata" id="">
+                    <%= data%>
+                </textarea>
+                <button class="bg-blue-500 p-2 rounded-md w-1/4" type="submit">Update Hisaab</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

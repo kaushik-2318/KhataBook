@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>KhaataBook</title>
+</head>
+
+<body>
+    <div>
+        <div class="flex justify-between item-center px-20 py-10 font-semibold">
+            <div><a href="/">KhaataBook</a></div>
+            <div class="flex justify-between item-center gap-20">
+                <div><a href="/">Home</a></div>
+                <div><a href="/createhisaab">Create New Hisab</a></div>
+            </div>
+        </div>
+
+        <div class="px-20">
+            <div class="font-semibold mb-10">All Hisaab Kitaab</div>
+
+            <%if(files.length>0){%>
+                <%files.forEach(function(file){ %>
+                    <h3 class="rounded-md mb-5 w-1/4 text-white bg-blue-500 p-2 flex justify-between item-center">
+                        <%= file.split(".")[0]%>
+                            <div class="flex justify-center item-center gap-2">
+                                <div>
+                                    <a href="/view/<%=file%>">
+                                        <img class="w-6 p-1 bg-white rounded-full" src="/arrow-right-line.svg" alt="">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="/edit/<%=file%>">
+                                        <img class="w-6 p-1 " src="/pencil-line.svg" alt="">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="/delete/<%=file%>">
+                                        <img class="w-6 p-1 bg-white rounded-full" src="/delete-bin-6-line.svg" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                    </h3>
+                    <%})} else{%>
+                        <h3>No Hissab Found</h3>
+                        <div class="rounded-md mt-5 text-white bg-blue-500 mb-5 w-1/4 p-2"><a href="/createhisaab">Create New Hisab</a></div>
+                    <%}%>
+        </div>
+    </div>
+</body>
+
+</html>

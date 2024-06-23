@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>View Hisab</title>
+</head>
+
+<body>
+    <div>
+        <div class="flex justify-between item-center px-20 py-10 font-semibold">
+            <div><a href="/">KhaataBook</a></div>
+            <div class="flex justify-between item-center gap-20">
+                <div><a href="/">Home</a></div>
+                <div><a href="/createhisaab">Create New Hisab</a></div>
+            </div>
+        </div>
+
+        <div class="px-20 gap-5 flex flex-col w-1/2">
+            <div class=" font-semibold">
+                Hisaab of <span class="text-blue-500"><%= filename.split(".")[0]%></span> date
+            </div>
+            <textarea class="border-2 border-blue-500 rounded-md p-2" disabled rows="10" cols="30"
+                name="updatedfiledata" id="">
+                    <%= data%>
+                </textarea>
+            <div>
+                <a href="/"><button class="px-4 py-2 bg-blue-500 rounded-md">Back</button></a>
+                <a href="/edit/<%= filename%>"><button class="px-4 py-2 bg-blue-500 rounded-md">Edit</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
